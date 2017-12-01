@@ -20,7 +20,9 @@
     "pretest": "run-s lint build link",
     "test": "ng test -sr",
     "test-coverage": "ng test -sr -cc",
-    "version": "npm run flow.changelog && git add -A"
+    "version": "npm run flow.changelog && git add -A",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "main": "bundles/ng2-charts.umd.js",
   "module": "index.js",
@@ -43,7 +45,8 @@
   },
   "homepage": "https://github.com/valor-software/ng2-charts#readme",
   "dependencies": {
-    "chart.js": "^2.4.0"
+    "chart.js": "^2.4.0",
+    "snyk": "^1.52.1"
   },
   "peerDependencies": {
     "@angular/common": "^2.3.0",
@@ -127,5 +130,6 @@
       "email": "nataliya.soloviova@valor-software.com",
       "url": "https://github.com/natali-abyss"
     }
-  ]
+  ],
+  "snyk": true
 }
